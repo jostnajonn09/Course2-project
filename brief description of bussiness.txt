@@ -1,0 +1,67 @@
+
+Bussiness understanding
+
+1)The company works or gives loans online 
+2)The company gives personal loans,bussiness loans and gives finance for some  medical procedures
+3)It's mostly similer to the lending club(you can get more information from the following website 
+  and if possible watch a few videos of small duration about lending club on youtube to know how it works)
+ 
+   https://www.lendingclub.com/ 
+4)The main objective of this project is to find risky applicants from historical data(loan data set).
+5)Risky applicants are those borrowers who do not pay money or run off with the lenders money .
+6)In the loan data set these risky applicants can be identified from the column loan_status which has a value charged off(defaulters)
+7)we have to use EDA to identify those risky applicants. (In other words, the company wants to understand the driving factors (or driver variables)
+ behind loan default, i.e. the variables which are strong indicators of default.  The company can utilise this knowledge for its portfolio and risk assessment)
+
+
+
+Data understanding :-
+for understanding the terms please check the data dictionary file and neha's excel file.
+please add more info if you guys have.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data preperation and cleaning(For this open the data cleaning checklist available in the data cleaning session of EDA module)
+
+
+1)The loan data set has 39717 observations of  111 variables.
+2)Out of these 111 variables almost about 50 from  last have  complete NA values with out any information (please check the data).
+3)In the data cleaning session it's said that delete all those columns or variables which have no values.After deleting all those columns you will be left with 57 columns
+  (so we'll check for all those columns and delete them,Please give me your opinion about this )
+4)After this, we can observe that the column names are not intuitive.. so i am thinking of changing the column names (so that they are more meaningfull and intuitive)
+5)Please have a look at the checklist before we proceed further
+6)From this i am assuming to change all the character variables to similer case like upper or lower or proper.And some numeric variables like term ,int_rate,emp_length
+ are read as character because of some characters like months ,% and > symbols present in those values.
+7)First we need to extract the numeric part out of those variables using string manipulation functions using base or string r packages and then convert them to numeric.
+8)Column desc (which is description of the loan) has values something like this " Borrower added on 12/22/11 > I need to upgrade my business technologies.<br>" .Please 
+ suggest if we need to strip the first part i.e " Borrower added on 12/22/11 >" or is it not required.
+9)Coming to the date variables these are the date variables in the data set 
+  
+  issue_d:-The month which the loan was funded
+   the values for this column are read in r in this format "Dec-11" "Dec-11" "Dec-11" "Dec-11"
+
+  earliest_cr_line:-The month the borrower's earliest reported credit line was opened
+  the values for this column are read in r in this format "Jan-85" "Apr-99" "Nov-01" "Feb-96"
+  
+  last_pymt_d:-Last month payment was received
+  the values for this column are read in r in this format "Jan-15" "Apr-13" "Jun-14" "Jan-15"
+
+  last_credit_pull_d:-The most recent month LC pulled credit for this loan
+  the values for this column are read in r in this format "May-16" "Sep-13" "May-16" "Apr-16"
+
+all the above date columns are read as characters in R .But inside  excel these values are in date form like 01-12-2011
+All the values have month in abbreviated form and a two digit year there is no day of month value.
+(please suggest some  ways to convert them to date.) 
+  
+ 
+ 
